@@ -1,0 +1,6 @@
+{
+  "helloWorld": "Bonjour tout le monde!",
+  "@helloWorld": {
+    "description": "La maniere conventionnel de creer un code"
+  }
+}
