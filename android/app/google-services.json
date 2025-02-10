@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "500075678183",
+    "project_id": "tpmmm-a8ab9",
+    "storage_bucket": "tpmmm-a8ab9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500075678183:android:6ebcdc5f29fab451dbd542",
+        "android_client_info": {
+          "package_name": "com.istic.trans_musicales"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdjWiUJgRpCto2CFigmbjTbuhWibMY3ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
