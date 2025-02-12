@@ -12,15 +12,15 @@ abstract interface class FirebaseAuthDatasource {
 }
 
 final class FirebaseAuthImpl implements FirebaseAuthDatasource {
-  FirebaseAuthImpl({required FirebaseAuth firebaseAuth}) : _firebaseAuth = FirebaseAuth.instance;
+  FirebaseAuthImpl();
 
-  final FirebaseAuth _firebaseAuth;
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   @override
   Future<UserCredential> register({required String email, required String password}) async {
     try {
       _firebaseAuth.currentUser?.reload();
-      final credential = await _firebaseAuth.createUserWithEmailAndPassword(
+      final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
