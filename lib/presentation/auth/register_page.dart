@@ -3,11 +3,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:trans_musicales/core/theme/app_palette.dart';
 import 'package:trans_musicales/presentation/auth/bloc/register_cubit.dart';
+import 'package:trans_musicales/presentation/home.dart';
 
 class RegisterPage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
 
   RegisterPage({super.key});
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +33,7 @@ class RegisterPage extends StatelessWidget {
                   child: Column(
                     children: [
                       TextFormField(
+                        controller: emailController,
                         decoration: InputDecoration(
                           hintText: 'Email',
                           filled: true,
@@ -52,6 +56,7 @@ class RegisterPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 16.0),
                         child: TextFormField(
+                          controller: passwordController,
                           decoration: const InputDecoration(
                             hintText: 'Password',
                             filled: true,
@@ -71,6 +76,13 @@ class RegisterPage extends StatelessWidget {
                       BlocListener<RegisterCubit, RegisterState>(
                         listener: (context, state) {
                           // TODO: implement listener
+                          if (state is RegisterSuccess) {
+                            // Navigate to the next page
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Home()));
+                          } else if (state is RegisterFailed) {
+                            // Show error message
+                            print("Failed to register");
+                          }
                         },
                         child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -78,7 +90,9 @@ class RegisterPage extends StatelessWidget {
                             onPressed: () {
                               if (_formKey.currentState!.validate()) {
                                 _formKey.currentState!.save();
-                                //  context.read<RegisterCubit>().register();
+                                context
+                                    .read<RegisterCubit>()
+                                    .register(email: emailController.text, password: passwordController.text);
                               }
                             },
                             style: ElevatedButton.styleFrom(

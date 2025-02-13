@@ -11,8 +11,8 @@ abstract interface class FirebaseAuthDatasource {
   Future<void> signOut();
 }
 
-final class FirebaseAuthImpl implements FirebaseAuthDatasource {
-  FirebaseAuthImpl();
+final class FirebaseAuthDatasourceImpl implements FirebaseAuthDatasource {
+  FirebaseAuthDatasourceImpl();
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 

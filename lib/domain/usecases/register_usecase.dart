@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
 import '../repository/auth_repo.dart';
 
 class RegisterUsecase {
@@ -5,8 +7,8 @@ class RegisterUsecase {
 
   final AuthRepo authRepo;
 
-  Future<void> call(RegisterParams params) {
-    return authRepo.register(email: params.email, password: params.password);
+  Future<UserCredential> call(RegisterParams params) async {
+    return await authRepo.register(email: params.email, password: params.password);
   }
 }
 
