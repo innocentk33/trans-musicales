@@ -9,6 +9,9 @@ class RegisterPage extends StatelessWidget {
 
   RegisterPage({super.key});
 
+  static String routeName = "register_screen";
+  static String path = "/register_screen";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
