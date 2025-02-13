@@ -15,16 +15,6 @@ String transMusicaleToJson(TransMusicale data) => json.encode(data.toJson());
 @freezed
 class TransMusicale with _$TransMusicale {
     const factory TransMusicale({
-        required int totalCount,
-        required List<Result> results,
-    }) = _TransMusicale;
-
-    factory TransMusicale.fromJson(Map<String, dynamic> json) => _$TransMusicaleFromJson(json);
-}
-
-@freezed
-class Result with _$Result {
-    const factory Result({
         required String annee,
         required String editionRencontresTransMusicales,
         required String artistes,
@@ -32,7 +22,7 @@ class Result with _$Result {
         required dynamic the1ErProjetAtm,
         required String anneeDeFormation,
         required String the1EreSortieDiscographique,
-    }) = _Result;
+    }) = _TransMusicale;
 
-    factory Result.fromJson(Map<String, dynamic> json) => _$ResultFromJson(json);
+    factory TransMusicale.fromJson(Map<String, dynamic> json) => _$TransMusicaleFromJson(json);
 }

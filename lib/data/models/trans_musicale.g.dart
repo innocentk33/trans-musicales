@@ -8,19 +8,6 @@ part of 'trans_musicale.dart';
 
 _$TransMusicaleImpl _$$TransMusicaleImplFromJson(Map<String, dynamic> json) =>
     _$TransMusicaleImpl(
-      totalCount: (json['totalCount'] as num).toInt(),
-      results: (json['results'] as List<dynamic>)
-          .map((e) => Result.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$$TransMusicaleImplToJson(_$TransMusicaleImpl instance) =>
-    <String, dynamic>{
-      'totalCount': instance.totalCount,
-      'results': instance.results,
-    };
-
-_$ResultImpl _$$ResultImplFromJson(Map<String, dynamic> json) => _$ResultImpl(
       annee: json['annee'] as String,
       editionRencontresTransMusicales:
           json['editionRencontresTransMusicales'] as String,
@@ -32,7 +19,7 @@ _$ResultImpl _$$ResultImplFromJson(Map<String, dynamic> json) => _$ResultImpl(
           json['the1EreSortieDiscographique'] as String,
     );
 
-Map<String, dynamic> _$$ResultImplToJson(_$ResultImpl instance) =>
+Map<String, dynamic> _$$TransMusicaleImplToJson(_$TransMusicaleImpl instance) =>
     <String, dynamic>{
       'annee': instance.annee,
       'editionRencontresTransMusicales':
