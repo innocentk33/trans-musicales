@@ -14,17 +14,24 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+TransMusicale _$TransMusicaleFromJson(Map<String, dynamic> json) {
+  return _TransMusicale.fromJson(json);
+}
+
 /// @nodoc
 mixin _$TransMusicale {
   String get annee => throw _privateConstructorUsedError;
   String get editionRencontresTransMusicales =>
       throw _privateConstructorUsedError;
   String get artistes => throw _privateConstructorUsedError;
-  dynamic get nomSpectacleOuSoiree => throw _privateConstructorUsedError;
-  dynamic get the1ErProjetAtm => throw _privateConstructorUsedError;
+  String get nomSpectacleOuSoiree => throw _privateConstructorUsedError;
+  String get the1ErProjetAtm => throw _privateConstructorUsedError;
   String get anneeDeFormation => throw _privateConstructorUsedError;
   String get the1EreSortieDiscographique => throw _privateConstructorUsedError;
-  List<Performance>? get performances => throw _privateConstructorUsedError;
+  List<Performance> get performances => throw _privateConstructorUsedError;
+
+  /// Serializes this TransMusicale to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of TransMusicale
   /// with the given fields replaced by the non-null parameter values.
@@ -43,11 +50,11 @@ abstract class $TransMusicaleCopyWith<$Res> {
       {String annee,
       String editionRencontresTransMusicales,
       String artistes,
-      dynamic nomSpectacleOuSoiree,
-      dynamic the1ErProjetAtm,
+      String nomSpectacleOuSoiree,
+      String the1ErProjetAtm,
       String anneeDeFormation,
       String the1EreSortieDiscographique,
-      List<Performance>? performances});
+      List<Performance> performances});
 }
 
 /// @nodoc
@@ -68,11 +75,11 @@ class _$TransMusicaleCopyWithImpl<$Res, $Val extends TransMusicale>
     Object? annee = null,
     Object? editionRencontresTransMusicales = null,
     Object? artistes = null,
-    Object? nomSpectacleOuSoiree = freezed,
-    Object? the1ErProjetAtm = freezed,
+    Object? nomSpectacleOuSoiree = null,
+    Object? the1ErProjetAtm = null,
     Object? anneeDeFormation = null,
     Object? the1EreSortieDiscographique = null,
-    Object? performances = freezed,
+    Object? performances = null,
   }) {
     return _then(_value.copyWith(
       annee: null == annee
@@ -87,14 +94,14 @@ class _$TransMusicaleCopyWithImpl<$Res, $Val extends TransMusicale>
           ? _value.artistes
           : artistes // ignore: cast_nullable_to_non_nullable
               as String,
-      nomSpectacleOuSoiree: freezed == nomSpectacleOuSoiree
+      nomSpectacleOuSoiree: null == nomSpectacleOuSoiree
           ? _value.nomSpectacleOuSoiree
           : nomSpectacleOuSoiree // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      the1ErProjetAtm: freezed == the1ErProjetAtm
+              as String,
+      the1ErProjetAtm: null == the1ErProjetAtm
           ? _value.the1ErProjetAtm
           : the1ErProjetAtm // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       anneeDeFormation: null == anneeDeFormation
           ? _value.anneeDeFormation
           : anneeDeFormation // ignore: cast_nullable_to_non_nullable
@@ -103,10 +110,10 @@ class _$TransMusicaleCopyWithImpl<$Res, $Val extends TransMusicale>
           ? _value.the1EreSortieDiscographique
           : the1EreSortieDiscographique // ignore: cast_nullable_to_non_nullable
               as String,
-      performances: freezed == performances
+      performances: null == performances
           ? _value.performances
           : performances // ignore: cast_nullable_to_non_nullable
-              as List<Performance>?,
+              as List<Performance>,
     ) as $Val);
   }
 }
@@ -123,11 +130,11 @@ abstract class _$$TransMusicaleImplCopyWith<$Res>
       {String annee,
       String editionRencontresTransMusicales,
       String artistes,
-      dynamic nomSpectacleOuSoiree,
-      dynamic the1ErProjetAtm,
+      String nomSpectacleOuSoiree,
+      String the1ErProjetAtm,
       String anneeDeFormation,
       String the1EreSortieDiscographique,
-      List<Performance>? performances});
+      List<Performance> performances});
 }
 
 /// @nodoc
@@ -146,11 +153,11 @@ class __$$TransMusicaleImplCopyWithImpl<$Res>
     Object? annee = null,
     Object? editionRencontresTransMusicales = null,
     Object? artistes = null,
-    Object? nomSpectacleOuSoiree = freezed,
-    Object? the1ErProjetAtm = freezed,
+    Object? nomSpectacleOuSoiree = null,
+    Object? the1ErProjetAtm = null,
     Object? anneeDeFormation = null,
     Object? the1EreSortieDiscographique = null,
-    Object? performances = freezed,
+    Object? performances = null,
   }) {
     return _then(_$TransMusicaleImpl(
       annee: null == annee
@@ -165,14 +172,14 @@ class __$$TransMusicaleImplCopyWithImpl<$Res>
           ? _value.artistes
           : artistes // ignore: cast_nullable_to_non_nullable
               as String,
-      nomSpectacleOuSoiree: freezed == nomSpectacleOuSoiree
+      nomSpectacleOuSoiree: null == nomSpectacleOuSoiree
           ? _value.nomSpectacleOuSoiree
           : nomSpectacleOuSoiree // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      the1ErProjetAtm: freezed == the1ErProjetAtm
+              as String,
+      the1ErProjetAtm: null == the1ErProjetAtm
           ? _value.the1ErProjetAtm
           : the1ErProjetAtm // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       anneeDeFormation: null == anneeDeFormation
           ? _value.anneeDeFormation
           : anneeDeFormation // ignore: cast_nullable_to_non_nullable
@@ -181,16 +188,16 @@ class __$$TransMusicaleImplCopyWithImpl<$Res>
           ? _value.the1EreSortieDiscographique
           : the1EreSortieDiscographique // ignore: cast_nullable_to_non_nullable
               as String,
-      performances: freezed == performances
+      performances: null == performances
           ? _value._performances
           : performances // ignore: cast_nullable_to_non_nullable
-              as List<Performance>?,
+              as List<Performance>,
     ));
   }
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$TransMusicaleImpl implements _TransMusicale {
   const _$TransMusicaleImpl(
       {required this.annee,
@@ -200,8 +207,11 @@ class _$TransMusicaleImpl implements _TransMusicale {
       required this.the1ErProjetAtm,
       required this.anneeDeFormation,
       required this.the1EreSortieDiscographique,
-      required final List<Performance>? performances})
+      required final List<Performance> performances})
       : _performances = performances;
+
+  factory _$TransMusicaleImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TransMusicaleImplFromJson(json);
 
   @override
   final String annee;
@@ -210,21 +220,19 @@ class _$TransMusicaleImpl implements _TransMusicale {
   @override
   final String artistes;
   @override
-  final dynamic nomSpectacleOuSoiree;
+  final String nomSpectacleOuSoiree;
   @override
-  final dynamic the1ErProjetAtm;
+  final String the1ErProjetAtm;
   @override
   final String anneeDeFormation;
   @override
   final String the1EreSortieDiscographique;
-  final List<Performance>? _performances;
+  final List<Performance> _performances;
   @override
-  List<Performance>? get performances {
-    final value = _performances;
-    if (value == null) return null;
+  List<Performance> get performances {
     if (_performances is EqualUnmodifiableListView) return _performances;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_performances);
   }
 
   @override
@@ -244,10 +252,10 @@ class _$TransMusicaleImpl implements _TransMusicale {
                     editionRencontresTransMusicales) &&
             (identical(other.artistes, artistes) ||
                 other.artistes == artistes) &&
-            const DeepCollectionEquality()
-                .equals(other.nomSpectacleOuSoiree, nomSpectacleOuSoiree) &&
-            const DeepCollectionEquality()
-                .equals(other.the1ErProjetAtm, the1ErProjetAtm) &&
+            (identical(other.nomSpectacleOuSoiree, nomSpectacleOuSoiree) ||
+                other.nomSpectacleOuSoiree == nomSpectacleOuSoiree) &&
+            (identical(other.the1ErProjetAtm, the1ErProjetAtm) ||
+                other.the1ErProjetAtm == the1ErProjetAtm) &&
             (identical(other.anneeDeFormation, anneeDeFormation) ||
                 other.anneeDeFormation == anneeDeFormation) &&
             (identical(other.the1EreSortieDiscographique,
@@ -258,14 +266,15 @@ class _$TransMusicaleImpl implements _TransMusicale {
                 .equals(other._performances, _performances));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       annee,
       editionRencontresTransMusicales,
       artistes,
-      const DeepCollectionEquality().hash(nomSpectacleOuSoiree),
-      const DeepCollectionEquality().hash(the1ErProjetAtm),
+      nomSpectacleOuSoiree,
+      the1ErProjetAtm,
       anneeDeFormation,
       the1EreSortieDiscographique,
       const DeepCollectionEquality().hash(_performances));
@@ -277,6 +286,13 @@ class _$TransMusicaleImpl implements _TransMusicale {
   @pragma('vm:prefer-inline')
   _$$TransMusicaleImplCopyWith<_$TransMusicaleImpl> get copyWith =>
       __$$TransMusicaleImplCopyWithImpl<_$TransMusicaleImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TransMusicaleImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _TransMusicale implements TransMusicale {
@@ -284,11 +300,14 @@ abstract class _TransMusicale implements TransMusicale {
       {required final String annee,
       required final String editionRencontresTransMusicales,
       required final String artistes,
-      required final dynamic nomSpectacleOuSoiree,
-      required final dynamic the1ErProjetAtm,
+      required final String nomSpectacleOuSoiree,
+      required final String the1ErProjetAtm,
       required final String anneeDeFormation,
       required final String the1EreSortieDiscographique,
-      required final List<Performance>? performances}) = _$TransMusicaleImpl;
+      required final List<Performance> performances}) = _$TransMusicaleImpl;
+
+  factory _TransMusicale.fromJson(Map<String, dynamic> json) =
+      _$TransMusicaleImpl.fromJson;
 
   @override
   String get annee;
@@ -297,15 +316,15 @@ abstract class _TransMusicale implements TransMusicale {
   @override
   String get artistes;
   @override
-  dynamic get nomSpectacleOuSoiree;
+  String get nomSpectacleOuSoiree;
   @override
-  dynamic get the1ErProjetAtm;
+  String get the1ErProjetAtm;
   @override
   String get anneeDeFormation;
   @override
   String get the1EreSortieDiscographique;
   @override
-  List<Performance>? get performances;
+  List<Performance> get performances;
 
   /// Create a copy of TransMusicale
   /// with the given fields replaced by the non-null parameter values.
