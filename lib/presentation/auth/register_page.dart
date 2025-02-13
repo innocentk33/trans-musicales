@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:trans_musicales/core/theme/app_palette.dart';
 import 'package:trans_musicales/presentation/auth/bloc/register_cubit.dart';
+import 'package:trans_musicales/presentation/auth/login_page.dart';
 
 class RegisterPage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -71,11 +73,7 @@ class RegisterPage extends StatelessWidget {
                           },
                         ),
                       ),
-                      BlocListener<RegisterCubit, RegisterState>(
-                        listener: (context, state) {
-                          // TODO: implement listener
-                        },
-                        child: Padding(
+                      Padding(
                           padding: const EdgeInsets.symmetric(vertical: 16.0),
                           child: ElevatedButton(
                             onPressed: () {
@@ -94,9 +92,10 @@ class RegisterPage extends StatelessWidget {
                             child: const Text("Register"),
                           ),
                         ),
-                      ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.goNamed(LoginPage.routeName);
+                        },
                         child: Text.rich(
                           const TextSpan(
                             text: "Already have an account? ",

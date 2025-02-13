@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:trans_musicales/core/theme/app_palette.dart';
 import 'package:trans_musicales/presentation/auth/bloc/login_cubit.dart';
 import 'package:trans_musicales/presentation/auth/bloc/login_cubit.dart';
+import 'package:trans_musicales/presentation/auth/register_page.dart';
+import 'package:trans_musicales/presentation/home.dart';
 
 class LoginPage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -72,14 +75,11 @@ class LoginPage extends StatelessWidget {
                           },
                         ),
                       ),
-                      BlocListener<LoginCubit, LoginState>(
-                        listener: (context, state) {
-                          // TODO: implement listener
-                        },
-                        child: Padding(
+                      Padding(
                           padding: const EdgeInsets.symmetric(vertical: 16.0),
                           child: ElevatedButton(
                             onPressed: () {
+                              context.goNamed(Home.routeName);
                               if (_formKey.currentState!.validate()) {
                                 _formKey.currentState!.save();
                                 //  context.read<LoginCubit>().Login();
@@ -95,15 +95,16 @@ class LoginPage extends StatelessWidget {
                             child: const Text("Login"),
                           ),
                         ),
-                      ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.goNamed(RegisterPage.routeName);
+                        },
                         child: Text.rich(
                           const TextSpan(
-                            text: "Already have an account? ",
+                            text: "Don't have an account ? ",
                             children: [
                               TextSpan(
-                                text: "Sign in",
+                                text: "Sign up",
                                 style: TextStyle(color: Color(0xFF00BF6D)),
                               ),
                             ],
